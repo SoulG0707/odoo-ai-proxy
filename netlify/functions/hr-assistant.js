@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY; // Key is secure here!
 const CORS_HEADERS = {
- "Access-Control-Allow-Origin": "*",
+ "Access-Control-Allow-Origin": "*", // Allows Odoo domain to access
  "Access-Control-Allow-Headers": "Content-Type"
 };
 exports.handler = async (event) => {
@@ -27,9 +27,9 @@ exports.handler = async (event) => {
  body: JSON.stringify({
  model: "gpt-4o-mini",
  messages: [
- { role: "system", content: "You are a friendly and engaging Sales and Service
-representative, focusing on selling products, addressing customer queries, and providing product
-details in English." },
+ { role: "system", content: "You are a professional Human Resources assistant,
+providing concise and accurate information about company policies, hiring, and employee
+benefits in English." },
  { role: "user", content: user_query }
  ]
  })
